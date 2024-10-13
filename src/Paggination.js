@@ -1,4 +1,3 @@
-// CustomPagination.js
 import React from 'react';
 
 const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onItemsPerPageChange }) => {

@@ -1,8 +1,7 @@
-// CharacterList.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
-import Paggination from "./Paggination"; // Import the pagination component
+import Paggination from "./Paggination"; 
 import Loader from "./Loader";
 
 const API_URL = "https://swapi.dev/api/people/";
@@ -35,7 +34,7 @@ function Test() {
 
   const handleItemsPerPageChange = (event) => {
     setItemsPerPage(parseInt(event.target.value, 10));
-    setCurrentPage(1); // Reset to the first page when items per page changes
+    setCurrentPage(1); 
   };
 
   return (

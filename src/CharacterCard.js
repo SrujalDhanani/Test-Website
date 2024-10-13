@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CharacterModal from "./CharacterModal";
-// import "./App.css";  // Add hover animations in this file
 
 function CharacterCard({ character }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
