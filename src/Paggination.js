@@ -14,7 +14,7 @@ const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onIt
                 className="page-btn pagi-1 d-flex align-items-center text-white btn-theme-primary"
                 onClick={() => onPageChange(currentPage - 1)}
             >
-                <i className="fa fa-angle-double-left" aria-hidden="true" style={{fontSize: '12px'}}></i>
+                <i className="fa fa-angle-double-left" aria-hidden="true" style={{ fontSize: '12px' }}></i>
             </button>
         );
 
@@ -39,7 +39,7 @@ const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onIt
                 className="page-btn d-flex align-items-center pagi-2 text-white btn-sm btn-theme-primary"
                 onClick={() => onPageChange(currentPage + 1)}
             >
-                <i class="fa-solid fa-angles-right" style={{fontSize: '12px'}}></i>
+                <i class="fa-solid fa-angles-right" style={{ fontSize: '12px' }}></i>
             </button>
         );
 
@@ -50,14 +50,6 @@ const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onIt
         <div className="pagination-container custom-pagination mt-3 d-flex">
             <div className="pagination custom-pagination me-2">
                 {renderPaginationButtons()}
-            </div>
-            <div>
-                {/* <select className="pg-drp p-0 m-0" value={itemsPerPage} onChange={onItemsPerPageChange}>
-                    <option value={10}>10</option>
-                    <option value={50}>50</option>
-                    <option value={100}>100</option>
-                    <option value={500}>500</option>
-                </select> */}
             </div>
         </div>
     );
