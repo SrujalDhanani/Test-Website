@@ -1,0 +1,166 @@
+/* For screen widths from 980px to 1600px */
+@media screen and (min-width: 980px) and (max-width: 1600px) {
+  
+    .App-header {
+      min-height: 90vh;
+      font-size: calc(8px + 1.5vmin);
+    }
+  
+    .Sign_head {
+      font-size: 48px;
+      line-height: 64px;
+    }
+  
+    .Contain_em, .Contain_pass {
+      width: 250px;
+      height: 40px;
+      font-size: 20px;
+    }
+  
+    .Inp_em, .Inp_pass {
+      font-size: 12px;
+    }
+  
+    .sign_btn {
+      width: 250px;
+      height: 50px;
+      font-size: 14px;
+    }
+  
+    .movie-container {
+      padding: 4vw;
+    }
+  
+    .movie-card {
+      width: 220px;
+      height: 489px;
+    }
+  
+    .movie_name {
+      font-size: 36px;
+    }
+  
+    .movie_log {
+      font-size: 17px;
+    }
+  
+    .name_mov, .pub_yer {
+      height: 40px;
+      width: 280px;
+    }
+  
+    .canc_btn, .sub_btnn {
+      height: 50px;
+      width: 150px;
+      font-size: 14px;
+    }
+  
+    .pagination {
+      gap: 10px;
+    }
+  
+    .empty {
+      margin-top: 12vw;
+    }
+  
+    .emp_head {
+      font-size: 36px;
+    }
+
+    .details-section {
+        margin-top: 13vw;
+    }
+    .file_div {
+        border-radius: 10px;
+        padding-left: 9vw;
+        /* display: flex; */
+        justify-content: center;
+        padding-top: 13vw;
+        background-color: rgba(34, 73, 87, 1);
+    }
+    .movie-image {
+        padding-left: 5px;
+        padding-top: 6px;
+        width: 216px;
+        height: 400px;
+        border-radius: 12px;
+    }
+  }
+  
+  /* For screen widths from 1600px to 2200px */
+  @media screen and (min-width: 1599) and (max-width: 2200px) {
+    
+    .App-header {
+      min-height: 85vh;
+      font-size: calc(10px + 1.8vmin);
+    }
+  
+    .Sign_head {
+      font-size: 54px;
+      line-height: 72px;
+    }
+  
+    .Contain_em, .Contain_pass {
+      width: 270px;
+      height: 42px;
+      font-size: 22px;
+    }
+  
+    .Inp_em, .Inp_pass {
+      font-size: 14px;
+    }
+  
+    .sign_btn {
+      width: 280px;
+      height: 54px;
+      font-size: 16px;
+    }
+  
+    .movie-container {
+      padding: 5vw;
+    }
+  
+    .movie-card {
+      width: 273px;
+      height: 490px;
+    }
+  
+    .movie_name {
+      font-size: 42px;
+    }
+    .movie_log {
+        padding-top: 3vw;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 1);
+        font-weight: 700;
+        text-align: center;
+    }
+  
+    .movie_log {
+      font-size: 16px;
+    }
+  
+    .name_mov, .pub_yer {
+      height: 45px;
+      width: 320px;
+    }
+  
+    .canc_btn, .sub_btnn {
+      height: 56px;
+      width: 160px;
+      font-size: 16px;
+    }
+  
+    .pagination {
+      gap: 12px;
+    }
+  
+    .empty {
+      margin-top: 10vw;
+    }
+  
+    .emp_head {
+      font-size: 42px;
+    }
+  }
+  

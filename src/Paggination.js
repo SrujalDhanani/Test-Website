@@ -14,8 +14,7 @@ const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onIt
                 className="page-btn pagi-1 d-flex align-items-center text-white btn-theme-primary"
                 onClick={() => onPageChange(currentPage - 1)}
             >
-                <i className="fa fa-angle-double-left" aria-hidden="true" style={{ fontSize: '12px' }}></i>
-            </button>
+prev            </button>
         );
 
         // Page number buttons
@@ -39,8 +38,7 @@ const Paggination = ({ totalPages, itemsPerPage, currentPage, onPageChange, onIt
                 className="page-btn d-flex align-items-center pagi-2 text-white btn-sm btn-theme-primary"
                 onClick={() => onPageChange(currentPage + 1)}
             >
-                <i class="fa-solid fa-angles-right" style={{ fontSize: '12px' }}></i>
-            </button>
+next            </button>
         );
 
         return buttons;
