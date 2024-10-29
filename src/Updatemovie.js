@@ -64,6 +64,7 @@ const Updatemovie = () => {
     };
 
     return (
+
         <div>
             <div className="new-movie-container">
 
@@ -123,7 +124,6 @@ const Updatemovie = () => {
                         </div>
                     </form>
                 </div>
-                {/* Wave Effect */}
 
             </div>
             <div className="wave-container">

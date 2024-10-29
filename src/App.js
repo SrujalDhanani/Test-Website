@@ -35,7 +35,6 @@ function App() {
         <Route path="MovieApp" element={<ProtectedRoute><MovieApp />
         </ProtectedRoute>} />
 
-
       </Routes>
     </Router >
   );
