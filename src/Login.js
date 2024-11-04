@@ -76,7 +76,7 @@ const Signup = () => {
                 </form>
             </div>
             {/* Wave Effect */}
-            <div className="wave-container">
+            <div className="wave-container" style={{marginTop: '20.6vw'}}>
                 <div className="wave"></div>
                 <div className="wave"></div>
 

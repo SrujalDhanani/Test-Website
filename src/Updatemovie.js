@@ -7,6 +7,7 @@ const Updatemovie = () => {
     const [movieTitle, setMovieTitle] = useState('');
     const [releaseYear, setReleaseYear] = useState('');
     const [file, setFile] = useState(null);
+
     const [existingImage, setExistingImage] = useState(null); // Track existing image
 
     const location = useLocation();
@@ -22,25 +23,38 @@ const Updatemovie = () => {
         if (movie) {
             setMovieTitle(movie.title);
             setReleaseYear(movie.year);
-            // File handling logic ko aap yahan update kar sakte hain agar aap file upload kar rahe hain
             setFile(movie.image);
+            if (typeof movie.image === 'string') {
+                setExistingImage(movie.image);
+            }
         }
     }, [movie]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
+
+        let imageUrl = existingImage;
+        if (file) {
+            if (file instanceof File) {
+                imageUrl = URL.createObjectURL(file); // Only call if `file` is a valid `File` object
+                console.log('File object is valid. Creating object URL:', imageUrl);
+            } else {
+                console.error('Error: `file` is not a valid `File` object:', file);
+            }
+        }
+
         const newMovie = {
             title: movieTitle,
             year: releaseYear,
-            image: file ? URL.createObjectURL(file) : null,
+            image: imageUrl,
         };
-    
+
         const storedMovies = JSON.parse(localStorage.getItem('movies')) || [];
-        
+
         // Find index of the existing movie to update
         const movieIndex = storedMovies.findIndex((m) => m.title === movie.title);
-    
+
         if (movieIndex !== -1) {
             // Update the existing movie
             storedMovies[movieIndex] = newMovie;
@@ -48,9 +62,9 @@ const Updatemovie = () => {
             // If movie doesn't exist, add it as a new entry
             storedMovies.push(newMovie);
         }
-    
+
         localStorage.setItem('movies', JSON.stringify(storedMovies));
-    
+
         console.log({ movieTitle, releaseYear, file });
         navigate('/Movie'); // Redirect to the New Movie page or another desired page
     };
@@ -72,29 +86,26 @@ const Updatemovie = () => {
                     <h2 className='crev_header'>Update a movie</h2>
 
 
-                    <div
-                        className='inp_file'
-                        onClick={handleIconClick}
-
-
-                    >
+                    <div className='inp_file' onClick={handleIconClick}>
                         {file ? (
-                            <p >{file.name}</p>
+                            <p>{file instanceof File ? file.name : 'Image selected'}</p>
+                        ) : existingImage ? (
+                            <img src={existingImage} alt="Existing Movie" style={{ width: '200px', height: 'auto' }} />
                         ) : (
-                            <>
-                                <div className='file_div'>
-                                    <i className="fa-solid fa-cloud-arrow-down prag_class" ></i>
-                                    <p className="pra_class">Drop an image here</p>
-                                </div>
-                            </>
+                            <div className='file_div'>
+                                <i className="fa-solid fa-cloud-arrow-down prag_class"></i>
+                                <p className="pra_class">Drop an image here</p>
+                            </div>
                         )}
                     </div>
+
+
                     <input
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    style={{ display: 'none' }} // Hide the file input
-                />
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        style={{ display: 'none' }} // Hide the file input
+                    />
                 </div>
                 <div className="details-section">
                     <form onSubmit={handleSubmit}>

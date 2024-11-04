@@ -40,6 +40,8 @@ const NewMovie = () => {
         setMovieTitle('');
         setReleaseYear('');
         setFile(null);
+        navigate('/Movie');
+
     };
 
     return (

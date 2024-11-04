@@ -21,7 +21,7 @@ const MovieApp = () => {
             </div>
             
         </div>
-        <div className="wave-container">
+        <div className="wave-container" style={{marginTop: '19.6vw'}}>
         <div className="wave"></div>
         <div className="wave"></div>
         </div>

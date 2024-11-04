@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Movie = () => {
     const [movies, setMovies] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage =4;
+    const itemsPerPage = 4;
     const navigate = useNavigate();
 
 
@@ -28,8 +28,16 @@ const Movie = () => {
     };
 
     const handleLogout = () => {
-        // Perform any logout logic here (like clearing localStorage, etc.)
-        navigate('/'); // Navigate to the Login page
+        // Remove user credentials and logged-in status from localStorage
+        localStorage.removeItem('email');
+        localStorage.removeItem('password');
+        localStorage.removeItem('isLoggedIn');
+        // Log for debugging
+        console.log('Logout clicked, clearing localStorage.');
+
+        localStorage.clear();
+        // Navigate back to the login or home page
+        navigate('/Logout'); // Adjust this path based on your route configuration
     };
 
     const handleNewMovie = () => {
@@ -67,11 +75,15 @@ const Movie = () => {
             {/* Pagination Component */}
             <div className='pag_mov'>
                 <Paggination
-                    totalPages={totalPages} 
+                    totalPages={totalPages}
                     itemsPerPage={itemsPerPage}
                     currentPage={currentPage}
                     onPageChange={handlePageChange}
                 />
+            </div>
+            <div className="wave-container">
+                <div className="wave"></div>
+                <div className="wave"></div>
             </div>
         </>
     );

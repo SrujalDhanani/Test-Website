@@ -7,6 +7,7 @@ import Newmovie from "./Newmovie";
 import Updatemovie from './Updatemovie';
 import ProtectedRoute from './ProtectedRoute';
 import MovieApp from './MovieApp';
+import Logout from './Logout';
 import './media.css';
 
 
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/Logout" element={<Logout />} />
         <Route
           path="/Movie"
           element={
